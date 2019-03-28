@@ -1,0 +1,54 @@
+<!DOCTYPE html">
+
+<html lang="ja">
+<head>
+<!--
+<meta http-equiv="Content-Type" Content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+-->
+
+<title>テキスト表示テスト</title>
+
+<script type="text/javascript">
+<!--
+var xmlHttp;
+
+function loadText(){
+  if (window.XMLHttpRequest){
+    xmlHttp = new XMLHttpRequest();
+  }else{
+    if (window.ActiveXObject){
+      xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }else{
+      xmlHttp = null;
+    }
+  }
+  xmlHttp.onreadystatechange = checkStatus;
+  xmlHttp.open("GET", "https://www.javadrive.jp/sample/readfile.txt", true);
+
+  xmlHttp.send(null);
+}
+
+function checkStatus(){
+  if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+    var node = document.getElementById("disp");
+    node.innerHTML = xmlHttp.responseText;
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+
+<h1>テキスト表示テスト</h1>
+
+<form>
+<input type="button" value="ファイル読み込み" onClick="loadText()">
+</form>
+
+<div id="disp"></div>
+
+</body>
+</html>
